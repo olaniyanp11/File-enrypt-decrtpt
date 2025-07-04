@@ -1,0 +1,49 @@
+<footer class="bg-[#141414] text-white py-10 px-6">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+
+    <!-- Logo & Short Description -->
+    <div>
+      <h2 class="text-2xl font-bold text-[#ec4a05] mb-3">SecureDocs</h2>
+      <p class="text-sm text-gray-400 leading-relaxed">
+        A lightweight, web-based platform that allows students and staff to securely encrypt and decrypt academic documents using AES and RSA encryption methods.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h3 class="text-xl font-semibold mb-3">Quick Links</h3>
+      <ul class="space-y-2 text-sm text-gray-300">
+        <li><a href="/" class="hover:text-[#ec4a05]">Home</a></li>
+        <li><a href="/about" class="hover:text-[#ec4a05]">About</a></li>
+        <li><a href="/login" class="hover:text-[#ec4a05]">Login</a></li>
+        <li><a href="/register" class="hover:text-[#ec4a05]">Register</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div>
+      <h3 class="text-xl font-semibold mb-3">Contact</h3>
+      <p class="text-sm text-gray-400">
+        Federal Polytechnic Ilaro<br>
+        Ogun State, Nigeria<br>
+        Email: <a href="mailto:yourname@email.com" class="text-[#ec4a05]">yourname@email.com</a>
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Bottom -->
+  <div class="border-t border-gray-700 mt-10 pt-4 text-center text-sm text-gray-500">
+    © <%= new Date().getFullYear() %> Permactech. All rights reserved.
+  </div>
+</footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true,
+  });
+</script>
+
+</body>
+</html>

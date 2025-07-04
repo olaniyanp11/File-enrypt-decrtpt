@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title || "DeEncrypt" %></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/output.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="bg-white">
+
+  <!-- Navbar -->
+  <header class="bg-white border-b border-gray-200 shadow-sm z-50">
+    <div class="w-[90%] mx-auto flex justify-between items-center py-4">
+      <!-- Logo -->
+      <a href="/" class="text-2xl font-bold text-[#ec4a05]">DeEncrypt</a>
+
+<nav class="hidden md:flex space-x-6 text-sm items-center text-gray-600 font-medium">
+  <a href="/" class="hover:text-[#ec4a05]">Home</a>
+  <a href="#about" class="hover:text-[#ec4a05]">About</a>
+
+  <% if (user) { %>
+    <a href="/encrypt" class="hover:text-[#ec4a05]">Encrypt File</a>
+    <a href="/decrypt" class="hover:text-[#ec4a05]">Decrypt File</a>
+    <a href="/logout" class="text-red-500 hover:text-red-600">Logout</a>
+  <% } else { %>
+    <a href="/login" class="bg-[#ec4a05] text-white px-6 py-2 rounded-full hover:bg-[#d93c00]">Login</a>
+  <% } %>
+</nav>
+
+      <!-- Hamburger Icon -->
+      <div class="md:hidden">
+        <button id="menuToggle" class="text-gray-700 focus:outline-none">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="hidden md:hidden bg-[#1a1a1a] text-white flex flex-col space-y-5 py-6 px-6 text-sm transition-all duration-200">
+  <a href="/" class="hover:text-[#ec4a05]">Home</a>
+  <a href="/" class="hover:text-[#ec4a05]">About</a>
+
+  <% if (user) { %>
+    <a href="/encrypt" class="hover:text-[#ec4a05]">Encrypt File</a>
+    <a href="/decrypt" class="hover:text-[#ec4a05]">Decrypt File</a>
+    <a href="/logout" class="text-red-400 hover:text-red-500">Logout</a>
+  <% } else { %>
+    <a href="/login" class="text-white bg-[#ec4a05] px-5 py-2 rounded-full text-center">Login</a>
+  <% } %>
+</div>
+
+  </header>
+
+    <!-- Flash Messages -->
+    <% if (typeof success_msg !== 'undefined' && success_msg.length > 0) { %>
+      <div class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[90%] max-w-md bg-green-500 text-white px-4 py-3 rounded shadow flex justify-between items-center mb-4">
+        <span><%= success_msg %></span>
+        <button onclick="this.parentElement.remove()" class="text-white font-bold">&times;</button>
+      </div>
+    <% } %>
+
+    <% if (typeof error_msg !== 'undefined' && error_msg.length > 0) { %>
+      <div class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[90%] max-w-md bg-red-500 text-white px-4 py-3 rounded shadow flex justify-between items-center mb-4">
+        <span><%= error_msg %></span>
+        <button onclick="this.parentElement.remove()" class="text-white font-bold">&times;</button>
+      </div>
+    <% } %>
+
+    <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
+      <div class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[90%] max-w-md bg-red-600 text-white px-4 py-3 rounded shadow mb-4">
+        <ul class="list-disc pl-5">
+          <% errors.forEach(function(error) { %>
+            <li><%= error %></li>
+          <% }); %>
+        </ul>
+        <button onclick="this.parentElement.remove()" class="text-white font-bold float-right mt-2">&times;</button>
+      </div>
+    <% } %>
+
+  <!-- AOS & Menu Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('mobileMenu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>

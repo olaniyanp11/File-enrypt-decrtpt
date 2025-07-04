@@ -1,0 +1,84 @@
+<%- include('./partials/header') %>
+
+<!-- Hero Section -->
+<section class="min-h-screen main rounded-[50px] relative flex justify-center object-top sm:pt-0 pt-20">
+  <div class="bg-white w-[90%] md:w-[70%] px-5 py-10 relative sm:absolute bottom-7 mx-auto flex flex-col md:flex-row justify-center items-center gap-6" data-aos="fade-up">
+    <div class="md:w-[60%] w-full text-center md:text-left">
+      <small class="text-[#ec4a05]">Encryption and Decryption Website</small>
+      <h1 class="text-4xl md:text-6xl text-gray-800 font-bold">Secure Document Encryption System</h1>
+    </div>
+    <div class="md:w-[35%] w-full text-center md:text-left">
+      <p class="text-md tracking-wider text-gray-700 pb-8">
+        Protect your academic documents with powerful encryption. This platform enables students and staff to securely encrypt and decrypt PDF and DOCX files using trusted cryptographic algorithms like AES and RSA — all within a user-friendly web interface.
+      </p>
+      <a href="/login" class="hover:text-[#ec2805] bg-[#ec4a05] text-white px-10 py-3 rounded-3xl">Get started Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- Project Summary -->
+<section class="grid grid-cols-1 sm:grid-cols-2 px-7 py-28 gap-10" data-aos="fade-up" id="about">
+  <div>
+    <h2 class="text-3xl font-bold text-gray-800 uppercase border-[#ec4a05] pl-4 border-l-4 mb-4">Project Summary</h2>
+    <p class="py-3">
+      The Secure Document Encryption System is a final year project developed to address the need for secure file handling within academic institutions. It offers a lightweight, web-based platform where users can upload documents and apply encryption to protect sensitive academic information.
+    </p>
+    <h2 class="text-2xl font-bold text-gray-800 mt-6 mb-3">Objectives</h2>
+    <ul class="list-disc pl-6 space-y-2">
+      <li>Provide a secure way for students and staff to encrypt their documents</li>
+      <li>Implement AES and RSA encryption standards for robust file protection</li>
+      <li>Ensure that only the original uploader can decrypt their own files</li>
+      <li>Create a practical, user-friendly system that serves real-world academic needs</li>
+    </ul>
+  </div>
+  <div data-aos="zoom-in">
+    <img src="/images/man.jpg" alt="Project Image" class="h-[500px] object-cover object-top w-full rounded shadow-lg">
+  </div>
+</section>
+
+<!-- Acknowledgement Section -->
+<section class="w-full bg-gray-100 text-gray-700 py-12 px-6" data-aos="fade-up">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+    <!-- Image -->
+    <div class="flex justify-end">
+      <img src="/images/hero2.jpg" alt="Acknowledgement" class="object-cover rounded-xl shadow-lg h-[500px] border-gray-300 border-4">
+    </div>
+
+    <!-- Text -->
+    <div class="w-full md:w-[80%]">
+      <h2 class="text-3xl font-bold mb-2">Acknowledgement</h2>
+      <p class="leading-relaxed text-md text-gray-600 tracking-wider">
+        This project was developed by <strong>[Your Full Name]</strong> in partial fulfillment of the requirements for the award of the <strong>Higher National Diploma (HND) in Computer Science</strong> at <strong>Federal Polytechnic Ilaro</strong>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Target Users & Core Features -->
+<section class="bg-[#ec4a05] text-white py-12 px-6" data-aos="fade-up">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-4xl font-bold mb-8 text-center">Target Users & Core Features</h2>
+
+    <div class="mb-10">
+      <h3 class="text-3xl font-semibold mb-4">🎯 Target Users</h3>
+      <ul class="list-disc list-inside space-y-2">
+        <li><strong>Students and staff of Federal Polytechnic Ilaro</strong> who need to securely manage academic documents.</li>
+        <li><strong>Non-technical users</strong> with little or no background in cybersecurity, looking for a simple and safe way to protect their files.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-2xl font-semibold mb-4">⚙️ Core Features</h3>
+      <ul class="list-disc list-inside space-y-2">
+        <li><strong>User Authentication:</strong> Secure login and registration system to protect access and manage user sessions.</li>
+        <li><strong>File Upload & Encryption:</strong> Supports uploading and encrypting <code>.pdf</code> and <code>.docx</code> files using strong cryptographic algorithms.</li>
+        <li><strong>Decryption with Access Control:</strong> Only the original uploader can decrypt their encrypted files, preventing unauthorized access.</li>
+        <li><strong>Hybrid Encryption (Optional):</strong> Combines AES (symmetric) and RSA (asymmetric) encryption methods for enhanced security.</li>
+        <li><strong>File Tracking & Metadata Storage:</strong> Logs and stores file name, upload time, type, and encryption method in the database.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<%- include('./partials/footer') %>

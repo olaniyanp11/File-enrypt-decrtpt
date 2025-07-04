@@ -1,0 +1,31 @@
+<%- include('partials/header') %>
+
+<section class="min-h-screen py-16 px-6 bg-gray-100 text-gray-800">
+  <div class="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-md text-center">
+    
+
+    <h1 class="text-3xl font-bold text-[#ec4a05] mb-6">🎉 Operation Successful</h1>
+
+    <% if (keyId) { %>
+      <p class="mb-4 text-gray-700">Your encryption key file is ready. Keep it safe!</p>
+      <a href="/download-key/<%= keyId %>"
+         class="inline-block bg-[#ec4a05] hover:bg-[#cf3f00] text-white px-6 py-2 rounded-full transition">
+        Download Key File 🔑
+      </a>
+    <% } %>
+
+    <% if (fileId) { %>
+      <p class="mb-4 text-gray-700">Your decrypted file is ready to download.</p>
+      <a href="/download/<%= fileId %>"
+         class="inline-block bg-[#ec4a05] hover:bg-[#cf3f00] text-white px-6 py-2 rounded-full transition">
+        Download Decrypted File 📄
+      </a>
+    <% } %>
+
+    <div class="mt-8">
+      <a href="/dashboard" class="text-[#ec4a05] hover:underline">← Back to Dashboard</a>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
